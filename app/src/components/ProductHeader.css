@@ -1,0 +1,148 @@
+
+.product-section {
+    margin-bottom: 25px;
+  }
+  
+  .battery-header {
+    display: flex;
+    gap: 30px;
+    padding: 25px;
+    min-height: 240px;
+    background: linear-gradient(115deg, #182839, #111c2a 65%, #101925);
+    border: 1px solid #283747;
+    border-radius: 12px 12px 0 0;
+  }
+  
+  .battery-image {
+    width: 260px;
+    min-width: 260px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #5d87ad;
+    background: radial-gradient(circle, #24394d, #111b28 72%);
+    border-radius: 9px;
+    border: 1px solid #2c3d4d;
+  }
+  
+  .battery-details {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .battery-title-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .battery-category {
+    color: #6da7dd;
+    letter-spacing: 1.7px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  
+  .battery-title-row h2 {
+    font-size: 34px;
+    font-weight: 600;
+    margin: 8px 0 4px;
+  }
+  
+  .battery-title-row p {
+    margin: 0;
+    color: #a7b5c5;
+    font-size: 15px;
+  }
+  
+  .battery-status {
+    display: flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 8px;
+    background: #223d38;
+    color: #72dbab;
+    border: 1px solid #386858;
+    border-radius: 20px;
+    padding: 8px 13px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+  
+  .battery-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: #55d69b;
+  }
+  
+  .battery-specifications {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    padding-top: 25px;
+  }
+  
+  .battery-specifications > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+  
+  .battery-specifications span {
+    color: #8498ad;
+    font-size: 10px;
+    letter-spacing: 1.2px;
+  }
+  
+  .battery-specifications strong {
+    font-size: 17px;
+    font-weight: 600;
+  }
+  
+  .product-tabs {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    padding: 0 16px;
+    background: #101a26;
+    border: 1px solid #283747;
+    border-top: none;
+    border-radius: 0 0 10px 10px;
+    overflow-x: auto;
+  }
+  
+  .product-tab {
+    padding: 17px;
+    background: transparent;
+    color: #9eafc1;
+    border: none;
+    border-bottom: 2px solid transparent;
+    white-space: nowrap;
+    font-size: 13px;
+  }
+  
+  .product-tab:hover {
+    color: #fff;
+  }
+  
+  .product-tab.selected {
+    color: #f0f6ff;
+    border-bottom-color: #439ce9;
+  }
+  
+  @media (max-width: 900px) {
+    .battery-header {
+      flex-direction: column;
+    }
+  
+    .battery-image {
+      width: 100%;
+      min-width: 0;
+      min-height: 180px;
+    }
+  }
+  

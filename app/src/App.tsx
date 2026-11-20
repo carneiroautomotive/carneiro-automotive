@@ -15,6 +15,8 @@ import {
   Search,
   ChevronDown,
 } from 'lucide-react'
+
+import ProductHeader from './components/ProductHeader'
 import './App.css'
 
 const navigation = [
@@ -35,9 +37,12 @@ function App() {
 
   return (
     <div className="application">
+
+      {/* LEFT SIDEBAR */}
       <aside className="sidebar">
         <div className="brand">
           <span className="brand-symbol">▰▰</span>
+
           <div className="brand-name">
             <strong>CARNEIRO</strong>
             <span>AUTOMOTIVE</span>
@@ -48,7 +53,9 @@ function App() {
           {navigation.map(({ label, icon: Icon }) => (
             <button
               key={label}
-              className={`nav-item ${activePage === label ? 'active' : ''}`}
+              className={`nav-item ${
+                activePage === label ? 'active' : ''
+              }`}
               onClick={() => setActivePage(label)}
             >
               <Icon size={19} strokeWidth={1.8} />
@@ -59,6 +66,7 @@ function App() {
 
         <div className="demo-status">
           <span className="status-indicator" />
+
           <div>
             <span>Demo (Offline)</span>
             <small>v0.9.0</small>
@@ -66,11 +74,15 @@ function App() {
         </div>
       </aside>
 
+      {/* MAIN APPLICATION */}
       <main className="main-area">
+
+        {/* TOP NAVIGATION */}
         <header className="topbar">
           <div className="topbar-left">
             <span>Products</span>
             <span className="breadcrumb-arrow">›</span>
+
             <button className="product-select">
               BAT-001 — HV Battery Pack
               <ChevronDown size={16} />
@@ -80,34 +92,45 @@ function App() {
           <div className="topbar-right">
             <div className="search-box">
               <Search size={17} />
+
               <input
+                type="search"
                 placeholder="Search products, components, suppliers..."
+                aria-label="Search platform"
               />
             </div>
-            <button className="icon-button" aria-label="Notifications">
+
+            <button
+              className="icon-button"
+              aria-label="Notifications"
+            >
               <Bell size={20} />
             </button>
+
             <div className="avatar">FC</div>
           </div>
         </header>
 
+        {/* PAGE CONTENT */}
         <section className="page-content">
-          <div className="page-intro">
-            <span className="eyebrow">Carneiro Automotive Platform</span>
-            <h1>{activePage}</h1>
-            <p>
-              Battery compliance, supplier traceability and lifecycle management.
-            </p>
-          </div>
 
-          <div className="placeholder-panel">
-            <h2>{activePage}</h2>
-            <p>
-              This section will be developed as part of the Carneiro
-              Automotive platform.
-            </p>
-          </div>
+          {activePage === 'Overview' ? (
+
+            <ProductHeader />
+
+          ) : (
+
+            <div className="placeholder-panel">
+              <h2>{activePage}</h2>
+              <p>
+                This section is under development.
+              </p>
+            </div>
+
+          )}
+
         </section>
+
       </main>
     </div>
   )
