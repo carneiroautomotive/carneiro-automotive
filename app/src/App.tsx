@@ -17,6 +17,10 @@ import {
 } from 'lucide-react'
 
 import ProductHeader from './components/ProductHeader'
+import LoginPage from './components/LoginPage'
+import ComplianceReadiness from './components/ComplianceReadiness'
+import GapAnalysis from './components/GapAnalysis'
+import SupplierStatus from './components/SupplierStatus'
 import './App.css'
 
 const navigation = [
@@ -34,7 +38,19 @@ const navigation = [
 
 function App() {
   const [activePage, setActivePage] = useState('Overview')
-
+  const [showLogin, setShowLogin] = useState(false)
+  const [welcomeUser, setWelcomeUser] = useState('')
+  if (showLogin) {
+    return (
+      <LoginPage
+        onLogin={(username) => {
+          setWelcomeUser(username)
+          setShowLogin(false)
+          setActivePage('Overview')
+        }}
+      />
+    )
+  }
   return (
     <div className="application">
 
@@ -107,16 +123,51 @@ function App() {
               <Bell size={20} />
             </button>
 
-            <div className="avatar">FC</div>
+            <button
+                className="avatar"
+                type="button"
+                title="Open demonstration login"
+                aria-label="Open demonstration login"
+                onClick={() => setShowLogin(true)}
+              >
+                FC
+              </button>
           </div>
         </header>
 
         {/* PAGE CONTENT */}
         <section className="page-content">
+        {welcomeUser && (
+            <div
+              role="status"
+              style={{
+                marginBottom: '18px',
+                padding: '12px 16px',
+                background: '#173b34',
+                border: '1px solid #32695b',
+                borderRadius: '8px',
+                color: '#a1e5c7',
+                fontSize: '13px',
+              }}
+            >
+              Welcome, {welcomeUser}! Demo session started.
+            </div>
+          )}
 
           {activePage === 'Overview' ? (
 
-            <ProductHeader />
+            <>
+              {/* BATTERY PRODUCT HEADER */}
+              <ProductHeader />
+
+              {/* DASHBOARD WIDGETS */}
+              <div className="dashboard-grid">
+                <ComplianceReadiness />
+                <GapAnalysis />
+                <SupplierStatus />
+
+              </div>
+            </>
 
           ) : (
 

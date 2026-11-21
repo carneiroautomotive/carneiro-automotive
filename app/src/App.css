@@ -247,3 +247,17 @@ button {
 .placeholder-panel p {
   color: #9babbc;
 }
+
+/* DASHBOARD WIDGET GRID */
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 1200px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
