@@ -21,6 +21,9 @@ import LoginPage from './components/LoginPage'
 import ComplianceReadiness from './components/ComplianceReadiness'
 import GapAnalysis from './components/GapAnalysis'
 import SupplierStatus from './components/SupplierStatus'
+import ProductStructure from './components/ProductStructure'
+import RecentActivity from './components/RecentActivity'
+import KeyEvidence from './components/KeyEvidence'
 import './App.css'
 
 const navigation = [
@@ -165,6 +168,10 @@ function App() {
                 <ComplianceReadiness />
                 <GapAnalysis />
                 <SupplierStatus />
+                <ProductStructure />
+                <RecentActivity />
+                <KeyEvidence />
+
 
               </div>
             </>

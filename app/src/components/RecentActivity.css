@@ -1,0 +1,173 @@
+
+/* CARNEIRO AUTOMOTIVE — RECENT ACTIVITY */
+
+.activity-card {
+    min-height: 300px;
+    padding: 20px;
+    background: linear-gradient(135deg, #172333, #101a27);
+    border: 1px solid #293a4b;
+    border-radius: 11px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+  }
+  
+  .activity-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    color: #b7c8d9;
+  }
+  
+  .activity-header h3 {
+    margin: 0;
+    color: #edf3fb;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  
+  .activity-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .activity-entry {
+    border-bottom: 1px solid #293a4b;
+  }
+  
+  .activity-entry:last-child {
+    border-bottom: none;
+  }
+  
+  .activity-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 13px 5px;
+    border: none;
+    background: transparent;
+    color: #a9bbcc;
+    text-align: left;
+    border-radius: 7px;
+    transition: background 0.2s;
+  }
+  
+  .activity-item:hover {
+    background: #1c2c3e;
+  }
+  
+  .activity-icon {
+    width: 36px;
+    height: 36px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: #263a4e;
+    color: #9bc9f0;
+  }
+  
+  .activity-icon.approved {
+    background: #173c34;
+    color: #39d994;
+  }
+  
+  .activity-icon.warning {
+    background: #483929;
+    color: #f4b544;
+  }
+  
+  .activity-icon.product {
+    background: #30374d;
+    color: #a4b9fa;
+  }
+  
+  .activity-info {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .activity-info strong {
+    color: #edf3fb;
+    font-size: 12px;
+    font-weight: 600;
+  }
+  
+  .activity-info span {
+    color: #91a6bb;
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  
+  .activity-date {
+    color: #8499ad;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  
+  .activity-item > svg:last-child {
+    color: #8098ae;
+    flex-shrink: 0;
+  }
+  
+  .activity-details {
+    margin: 0 5px 12px 47px;
+    padding: 13px;
+    background: #0c1927;
+    border: 1px solid #2e4255;
+    border-radius: 8px;
+  }
+  
+  .activity-details > span {
+    color: #8fc9f3;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  
+  .activity-details p {
+    margin: 9px 0;
+    color: #c1d0df;
+    font-size: 11px;
+    line-height: 1.7;
+  }
+  
+  .activity-details small {
+    color: #7189a0;
+    font-size: 10px;
+  }
+  
+  .activity-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid #293a4b;
+    color: #8ea5bb;
+    font-size: 11px;
+  }
+  
+  @media (max-width: 480px) {
+    .activity-card {
+      padding: 14px;
+    }
+  
+    .activity-item {
+      gap: 8px;
+    }
+  
+    .activity-date {
+      font-size: 9px;
+    }
+  
+    .activity-details {
+      margin-left: 8px;
+    }
+  }
+  
